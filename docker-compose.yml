@@ -19,10 +19,10 @@ services:
 
   app:
     environment:
-      DJANGO_SECRET_KEY: changeme
-      DATABASE_URL: postgres://app_user:changeme@db/app_db
-      REDIS_URL: redis://redis
-      DJANGO_SETTINGS_MODULE: bakerydemo.settings.dev
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:-changeme}
+      DATABASE_URL: ${DATABASE_URL:-postgres://app_user:changeme@db/app_db}
+      REDIS_URL: ${REDIS_URL:-redis://redis}
+      DJANGO_SETTINGS_MODULE: ${DJANGO_SETTINGS_MODULE:-bakerydemo.settings.dev}
     build:
       context: .
       dockerfile: ./Dockerfile

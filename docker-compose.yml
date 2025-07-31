@@ -31,8 +31,6 @@ services:
     links:
       - db:db
       - redis:redis
-    ports:
-      - '8100:8000'
     depends_on:
       - db
       - redis
